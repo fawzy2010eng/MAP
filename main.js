@@ -52,6 +52,10 @@ for (var i = 0; i < states.length; i++) {
 
     map.appendChild(area);
 
+	var stateWikiLink = 'https://en.wikipedia.org/wiki/' + area.getAttribute('data-state');
+    area.setAttribute('href', stateWikiLink);
+    area.setAttribute('target', '_');
+	
     area.addEventListener('mouseover', function () {
         var val = 'images/' + this.getAttribute('data-state') + '.png';
         image.setAttribute('src', val);
