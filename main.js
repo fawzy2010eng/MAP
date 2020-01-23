@@ -67,11 +67,15 @@ for (var i = 0; i < states.length; i++) {
     });
     
     area.addEventListener('mousewheel',function(){
-        var browserZoomLevel = Math.round(window.devicePixelRatio * 100);
+// 	while the mousewheel check the zoom level
+	var browserZoomLevel = Math.round(window.devicePixelRatio * 100);
+// 	    if the mouse over arizona
         if(this.getAttribute('data-state') == 'Arizona'){
-            
+//             if the zoom level greater than 100 show the arizona map 
             if(browserZoomLevel > 100){
-                image.setAttribute('src','images/arizona-map.jpg')
+                image.setAttribute('src','images/arizona-map.jpg');
+		    
+// 		    else show the whole map 
             }else if(browserZoomLevel<100){
                 image.setAttribute('src', 'images/us%20images.png');
         }   
