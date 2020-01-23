@@ -15,9 +15,4 @@ ul li{
     background-color: azure;
     cursor: pointer
 }
-area{
-    cursor: pointer;
-}
-area:hover{
-    border: solid 3px black 
-}
+

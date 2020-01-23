@@ -68,4 +68,41 @@ for (var i = 0; i < states.length; i++) {
 
 }
 
+var imgContainer = document.querySelector('div');
+
+imgContainer.addEventListener('wheel', function(event){
+    var images = document.querySelectorAll('img');
+
+    var rolledDirection = event.wheelDelta > 0 ? 'up' : 'down';
+
+    if(rolledDirection == 'up'){
+        var stateImage = image.getAttribute('src');
+        stateImage = stateImage.replace('images/', '');
+        stateImage = stateImage.replace('.png', '');
+
+        var srcPart1 = 'https://geology.com/state-map/maps/';
+        var srcPart2 = '-county-map.gif';
+        
+        if(stateImage != 'us%20images'){
+           stateImage = stateImage.toLowerCase();
+           if(/\s/.test(stateImage)){
+               stateImage = stateImage.replace(' ', '-');
+           }
+
+           console.log(stateImage);
+   
+           images[1].setAttribute('src', srcPart1 + stateImage + srcPart2);
+   
+           images[0].style.display = 'none';
+           images[1].style.display = 'inline';
+
+        }
+    }else if(rolledDirection = 'down'){
+        if(images[1].style.display == 'inline'){
+            images[0].style.display = 'inline';
+            images[1].style.display = 'none';
+        }
+    }
+
+});
 
